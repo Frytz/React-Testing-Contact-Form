@@ -12,8 +12,18 @@ test("cannot submit an empty form: must fail this test", () => {
   const { getByTestId } = render(<ContactForm />);
   fireEvent.click(getByTestId('submitButton'))
   getByTestId('submitted data')
-//
 });
+
+//render test
+test("fields must render", () => {
+  const { getByTestId } = render(<ContactForm />);
+  getByTestId("firstName");
+  getByTestId("lastName");
+  getByTestId("email");
+  getByTestId("message");
+});
+
+//testing text fields
 
 
 
