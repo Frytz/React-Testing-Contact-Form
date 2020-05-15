@@ -23,7 +23,7 @@ const ContactForm = () => {
             data-testid="firstName"
             name="firstName"
             placeholder="Edd"
-            ref={register({ required: true, maxLength: 3 })}
+            ref={register({ required: true, minLength: 3 })} //should be min length?
           />
           {errors.firstName && (
             <p>Looks like there was an error: {errors.firstName.type}</p>
@@ -65,7 +65,10 @@ const ContactForm = () => {
           />
         </div>
         {data && (
-          <pre style={{ textAlign: "left", color: "white" }}>
+          <pre
+            data-testid="submittedData"
+            style={{ textAlign: "left", color: "white" }}
+          >
             {JSON.stringify(data, null, 2)}
           </pre>
         )}
